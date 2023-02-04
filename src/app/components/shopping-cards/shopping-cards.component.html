@@ -1,0 +1,10 @@
+<div class="products-grid">
+  <div *ngFor="let product of products">
+    <img [src]="product.image" [alt]="product.name">
+    <p>{{ product.name }}</p>
+    <div>
+      <p>Precio: {{ product.price }}</p>
+      <span class="material-symbols-outlined">add</span>
+    </div>
+  </div>
+</div>
