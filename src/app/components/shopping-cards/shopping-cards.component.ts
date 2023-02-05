@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/product.module';
+import { ToggleAsideService } from 'src/app/services/toggleAside/toggle-aside.service';
 
 @Component({
   selector: 'app-shopping-cards',
@@ -45,4 +46,8 @@ export class ShoppingCardsComponent {
       category: 'all',
     },
   ]
+
+  constructor(
+    public ToggleAside: ToggleAsideService
+  ) {}
 }

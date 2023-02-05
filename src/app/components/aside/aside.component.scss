@@ -1,0 +1,86 @@
+@mixin Center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aside{
+  background-color: var(--card);
+  width: 30%;
+  height: 100vh;
+
+  position: fixed;
+  right: 0;
+  top: 41px;
+
+  transform: translateX(324px);
+  &.active {
+    transform: translateX(0);
+  }
+  div{
+    height: 50%;
+  }
+  div:nth-child(1){
+    img{
+      height: 100%;
+      width: 100%;
+
+      object-fit: cover;
+    }
+    span{
+      position: absolute;
+      left: 10px;
+      top: 10px;
+
+      height: 6%;
+      width: 13%;
+      background: white;
+
+      @include Center();
+
+      border-radius: 50%;
+
+      cursor: pointer;
+    }
+  }
+  div:nth-child(2){
+    h2{
+      font-weight: var(--bold);
+      height: 12%;
+
+      @include Center();
+
+    }
+    > p{
+      background: var(--fondo);
+
+      padding: 8px;
+      margin: 8px;
+
+      border-radius: 12px;
+    }
+    div{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      height: 12%;
+
+      padding: 0 8px;
+      p{
+        font-weight: bold
+      }
+      span{
+        @include Center();
+
+        background-color: var(--btn-dark);
+
+        width: 18%;
+        height: 100%;
+        border-radius: 50%;
+
+        cursor: pointer;
+      }
+    }
+  }
+}

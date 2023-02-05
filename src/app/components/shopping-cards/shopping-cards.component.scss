@@ -1,3 +1,9 @@
+@mixin Center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .products-grid{
   width: 80%;
   margin:  auto;
@@ -14,16 +20,14 @@
       border-top-right-radius: 20px;
       border-top-left-radius: 20px;
 
-      position: relative;
-      top: 5px;
+      // position: relative;
+      // top: 5px;
     }
     > p{
       height: 15%;
       font-size: var(--small);
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include Center();
 
       background-color: var(--card);
       border-bottom: 1px solid rgb(173, 170, 170);
@@ -48,9 +52,7 @@
         width: 20%;
         height: 80%;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include Center();
 
         border-radius: 50%;
       }
