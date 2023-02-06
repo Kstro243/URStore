@@ -22,10 +22,8 @@
   }
   div:nth-child(1){
     img{
-      height: 100%;
       width: 100%;
-
-      object-fit: cover;
+      height: -webkit-fill-available;
     }
     span{
       position: absolute;
@@ -46,10 +44,11 @@
   div:nth-child(2){
     h2{
       font-weight: var(--bold);
-      height: 12%;
+      height: 16%;
 
       @include Center();
 
+      margin: 8px;
     }
     > p{
       background: var(--fondo);
@@ -58,6 +57,10 @@
       margin: 8px;
 
       border-radius: 12px;
+
+      height: 40%;
+
+      overflow-y: auto;
     }
     div{
       display: flex;

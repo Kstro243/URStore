@@ -1,7 +1,7 @@
 <section class="products-grid">
   <div *ngFor="let product of products">
     <div>
-      <img [src]="product.image" [alt]="product.title" (click)="ToggleAside.toggleAside()" >
+      <img [src]="product.image" [alt]="product.title" (click)="Aside.onShowAside(product.id)" (click)="ToggleAside.openAside()" >
     </div>
     <p>{{ product.title }}</p>
     <div>

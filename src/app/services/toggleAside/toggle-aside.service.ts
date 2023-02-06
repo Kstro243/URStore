@@ -6,7 +6,11 @@ import { Injectable } from '@angular/core';
 export class ToggleAsideService {
   activeAside: boolean = false;
 
-  toggleAside() {
-    this.activeAside = !this.activeAside;
+  closeAside() {
+    this.activeAside = false;
+  }
+
+  openAside() {
+    this.activeAside = true;
   }
 }

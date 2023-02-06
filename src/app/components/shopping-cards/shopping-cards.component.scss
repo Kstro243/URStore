@@ -13,6 +13,9 @@
   grid-auto-rows: auto;
   row-gap: 20px;
   column-gap: 50px;
+
+  position: relative;
+  top: 41px;
   > div{
     div:nth-child(1){
       height: 60%;

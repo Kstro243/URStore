@@ -1,13 +1,13 @@
 <aside class="aside" [class.active]="ToggleAside.activeAside" >
   <div>
-    <img src="./assets/images.jpg" alt="imagen">
-    <span (click)="ToggleAside.toggleAside()" class="material-symbols-outlined">close</span>
+    <img [src]="Aside.producto.image" alt="imagen">
+    <span (click)="ToggleAside.closeAside()" class="material-symbols-outlined">close</span>
   </div>
   <div>
-    <h2>Name</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, assumenda.</p>
+    <h2>{{Aside.producto.title}}</h2>
+    <p>{{Aside.producto.description}}</p>
     <div>
-      <p>Price: $123</p>
+      <p>Price: ${{Aside.producto.price}} </p>
       <span class="material-symbols-outlined">add_shopping_cart</span>
     </div>
   </div>
