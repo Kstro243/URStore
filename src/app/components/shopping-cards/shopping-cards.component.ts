@@ -18,8 +18,11 @@ export class ShoppingCardsComponent {
     public Aside: AsideInfoService,
   ) {}
 
+  limit: number = 10;
+  offset: number = 0;
+
   ngOnInit(): void {
-    this.API.getProducts()
+    this.API.getProducts(this.limit, this.offset)
     .subscribe(data => {
       this.products = data;
     });

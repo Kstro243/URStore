@@ -13,9 +13,12 @@ export class AsideInfoService {
     id: 0,
     title: '',
     price: 0,
-    image: '',
-    category: '',
-    rating: {},
+    images: [],
+    category: {
+      id: 0,
+      name: '',
+      image: ''
+    },
     description: '',
   };
   onShowAside(id: number) {

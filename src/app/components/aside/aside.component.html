@@ -1,6 +1,6 @@
 <aside class="aside" [class.active]="ToggleAside.activeAside" >
   <div>
-    <img [src]="Aside.producto.image" alt="imagen">
+    <img [src]="Aside.producto.images[0]" [alt]="Aside.producto.title">
     <span (click)="ToggleAside.closeAside()" class="material-symbols-outlined">close</span>
   </div>
   <div>

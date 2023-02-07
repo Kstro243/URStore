@@ -6,13 +6,15 @@ import { Producto } from 'src/app/models/product.module';
   providedIn: 'root'
 })
 export class RequestAPIService {
-  APIurl = 'https://fakestoreapi.com/products';
+  APIurl = 'https://api.escuelajs.co/api/v1/products';
   constructor(
     private http: HttpClient
   ) { }
 
-  getProducts() {
-    return this.http.get<Producto[]>(this.APIurl)
+  getProducts(limit: number, offset: number) {
+    return this.http.get<Producto[]>(`${this.APIurl}`, {
+      params: {limit, offset}
+    })
   }
 
   getProducto(id: number) {
