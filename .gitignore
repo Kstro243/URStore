@@ -43,3 +43,6 @@ Thumbs.db
 
 # Imgs
 *.jpg
+
+#pdfs
+*.pdf

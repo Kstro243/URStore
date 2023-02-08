@@ -6,7 +6,7 @@
     <p>{{ product.title }}</p>
     <div>
       <p>Precio: {{ product.price }}</p>
-      <span class="material-symbols-outlined">add</span>
+      <span (click)="list.shoppinglist(product)" class="material-symbols-outlined">add</span>
     </div>
   </div>
 </section>
