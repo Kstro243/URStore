@@ -14,7 +14,6 @@ export class HomeComponent {
 
   constructor(
     public API: RequestAPIService,
-
   ) {}
 
 

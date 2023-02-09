@@ -9,13 +9,15 @@ import { CategoryComponent } from './pages/category/category.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }, {
+    path: 'home',
     component: HomeComponent
-  },
-  {
+  }, {
     path: 'shoppingcart',
     component: MycartComponent
-  },
-  {
+  }, {
     path: 'category/:id',
     component: CategoryComponent
   }

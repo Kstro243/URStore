@@ -22,7 +22,6 @@ export class CategoryComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.categoryId = params.get('id');
-      console.log(this.categoryId);
       if (this.categoryId) {
         this.API.getProductsbyCategory(this.categoryId, this.limit, this.offset)
         .subscribe(data => {

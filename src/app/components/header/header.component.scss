@@ -37,6 +37,11 @@
         border-radius: 12px;
 
         padding: 4px;
+        &.active {
+          border: 1px solid var(--btn-dark);
+          background-color: var(--btn-light);
+          color: white;
+        }
       }
     }
 

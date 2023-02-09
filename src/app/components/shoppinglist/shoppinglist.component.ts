@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Producto } from 'src/app/models/product.module';
 import { ShoppingserviceService } from 'src/app/services/shoppingservice/shoppingservice.service';
 
 @Component({
@@ -7,11 +8,16 @@ import { ShoppingserviceService } from 'src/app/services/shoppingservice/shoppin
   styleUrls: ['./shoppinglist.component.css']
 })
 export class ShoppinglistComponent {
+  products: Producto[] = []
+
   constructor(
     public list: ShoppingserviceService
   ) {}
 
-  print() {
-    console.log(this.list.addedproducts)
+  ngOnInit(): void {
+    this.list.myCart$.subscribe(productos => {
+      this.products = productos;
+    })
+    console.log(this.products);
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Producto } from 'src/app/models/product.module';
+import { categoria } from 'src/app/models/categoria.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class RequestAPIService {
     return this.http.get<Producto[]>(`${this.APIurl}/categories/${categoryId}/products`, {
       params: {limit, offset}
     })
+  }
+
+  getCategories() {
+    return this.http.get<categoria[]>(`${this.APIurl}/categories`)
   }
 }

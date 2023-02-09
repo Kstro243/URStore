@@ -2,17 +2,19 @@
   <div>
     <span class="material-symbols-outlined">store</span>
     <div>
-      <p>All</p>
-      <p>Clothes</p>
-      <p>Toys</p>
-      <p>Others</p>
+      <p (click)="ToggleAside.closeAside()" routerLinkActive="active" routerLink="/home">All</p>
+      <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 1]">Fashion</p>
+      <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 2]">Watches</p>
+      <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 3]">Furnitures</p>
+      <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 4]">Shoes</p>
+      <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 5]">Others</p>
     </div>
   </div>
   <div>
     <p>example@gmail.com</p>
     <div>
-      <span class="material-symbols-outlined">shopping_cart</span>
-      <div>1</div>
+      <span routerLink="/shoppingcart" class="material-symbols-outlined">shopping_cart</span>
+      <div>{{contador}}</div>
     </div>
   </div>
 </header>
