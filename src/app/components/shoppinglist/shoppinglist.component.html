@@ -1,12 +1,12 @@
-<section class="products-grid">
+<section class="product-list">
   <div *ngFor="let product of products">
+    <img [src]="product.images[0]" [alt]="product.title">
+    <h1>{{product.title}}</h1>
     <div>
-      <img [src]="product.images[0]" [alt]="product.title" >
+      <button [disabled]="btndisabled" (click)="disminuir()" type="button">-</button>
+      <p>{{cantidad}}</p>
+      <button (click)="aumentar()" type="button">+</button>
     </div>
-    <p>{{ product.title }}</p>
-    <div>
-      <p>Precio: {{ product.price }}</p>
-      <span  class="material-symbols-outlined">add</span>
-    </div>
+    <h3>{{product.price}}</h3>
   </div>
 </section>
