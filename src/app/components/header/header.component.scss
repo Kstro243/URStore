@@ -37,6 +37,8 @@
         border-radius: 12px;
 
         padding: 4px;
+
+        cursor: pointer;
         &.active {
           border: 1px solid var(--btn-dark);
           background-color: var(--btn-light);
@@ -69,6 +71,9 @@
         border-radius: 50%;
 
         font-size: 11px;
+      };
+      span{
+        cursor: pointer;
       }
     }
   }

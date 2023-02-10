@@ -12,4 +12,5 @@ export interface Producto {
   images: string[];
   description: string;
   quantity: number;
+  btndisabled?: boolean;
 }

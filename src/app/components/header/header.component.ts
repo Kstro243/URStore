@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnChanges } from '@angular/core';
 import { categoria } from 'src/app/models/categoria.model';
+import { Producto } from 'src/app/models/product.module';
 import { RequestAPIService } from 'src/app/services/RequestAPI/request-api.service';
 import { ShoppingserviceService } from 'src/app/services/shoppingservice/shoppingservice.service';
 import { ToggleAsideService } from 'src/app/services/toggleAside/toggle-aside.service';
@@ -9,23 +10,38 @@ import { ToggleAsideService } from 'src/app/services/toggleAside/toggle-aside.se
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements DoCheck{
   constructor(
     public API: RequestAPIService,
     public list: ShoppingserviceService,
     public ToggleAside: ToggleAsideService
   ){}
 
-  contador = 0;
+  contador: number= 0;
   categories: categoria[] = [];
+  products: Producto[] = [];
 
   ngOnInit(): void {
     this.API.getCategories()
     .subscribe(data => {
       this.categories = data;
-    }),
-    this.list.myCart$.subscribe(lista => {
-      this.contador = lista.length;
-    })
+    });
+
+    const localStorageItem = localStorage.getItem('shoppinglist');
+    if (!localStorageItem){
+      localStorage.setItem('shoppinglist', JSON.stringify([]));
+    } else {
+      this.list.addedproducts = JSON.parse(localStorageItem);
+      this.list.myCart.next(JSON.parse(localStorageItem));
+    };
+
+    this.list.myCart$.subscribe(productos => {
+      this.products = productos;
+    });
+    this.contador = this.products.reduce((c: number, producto: Producto) => c + producto.quantity, 0);
+  };
+
+  ngDoCheck(): void {
+    this.contador = this.products.reduce((c: number, producto: Producto) => c + producto.quantity, 0);
   }
 }

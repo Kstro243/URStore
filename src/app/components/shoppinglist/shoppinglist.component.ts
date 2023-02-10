@@ -15,8 +15,17 @@ export class ShoppinglistComponent {
   ) {}
 
   ngOnInit(): void {
+    const localStorageItem = localStorage.getItem('shoppinglist');
+    if (!localStorageItem){
+      localStorage.setItem('shoppinglist', JSON.stringify([]));
+    } else {
+      this.list.addedproducts = JSON.parse(localStorageItem);
+      this.list.myCart.next(JSON.parse(localStorageItem));
+    };
+
     this.list.myCart$.subscribe(productos => {
       this.products = productos;
     })
+    // console.log(JSON.parse(localStorage.getItem('shoppinglist')))
   }
 }

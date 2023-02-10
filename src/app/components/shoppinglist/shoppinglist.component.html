@@ -1,9 +1,10 @@
 <section class="product-list">
+  <h1 *ngIf="!products.length">Agrega productos al carrito</h1>
   <div *ngFor="let product of products">
     <img [src]="product.images[0]" [alt]="product.title">
     <h1>{{product.title}}</h1>
     <div>
-      <button [disabled]="list.btndisabled" (click)="list.disminuir(product.id)" type="button">-</button>
+      <button [disabled]="product.btndisabled" (click)="list.disminuir(product.id)" type="button">-</button>
       <p>{{product.quantity}}</p>
       <button (click)="list.aumentar(product.id)" type="button">+</button>
     </div>

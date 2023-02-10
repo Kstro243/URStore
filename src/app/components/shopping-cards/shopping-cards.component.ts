@@ -18,5 +18,13 @@ export class ShoppingCardsComponent {
     public list: ShoppingserviceService,
   ) {}
 
-
+  ngOnInit(): void {
+    const localStorageItem = localStorage.getItem('shoppinglist');
+    if (!localStorageItem){
+      localStorage.setItem('shoppinglist', JSON.stringify([]));
+    } else {
+      this.list.addedproducts = JSON.parse(localStorageItem);
+      this.list.myCart.next(JSON.parse(localStorageItem));
+    }
+  };
 }
