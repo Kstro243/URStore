@@ -3,10 +3,10 @@
     <img [src]="product.images[0]" [alt]="product.title">
     <h1>{{product.title}}</h1>
     <div>
-      <button [disabled]="btndisabled" (click)="disminuir()" type="button">-</button>
-      <p>{{cantidad}}</p>
-      <button (click)="aumentar()" type="button">+</button>
+      <button [disabled]="list.btndisabled" (click)="list.disminuir(product.id)" type="button">-</button>
+      <p>{{product.quantity}}</p>
+      <button (click)="list.aumentar(product.id)" type="button">+</button>
     </div>
-    <h3>{{product.price}}</h3>
+    <h3>{{product.price * product.quantity}}</h3>
   </div>
 </section>

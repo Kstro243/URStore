@@ -20,6 +20,7 @@ export class AsideInfoService {
       image: ''
     },
     description: '',
+    quantity: 0
   };
   onShowAside(id: number) {
     this.API.getProducto(id)

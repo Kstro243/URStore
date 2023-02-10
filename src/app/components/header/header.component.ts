@@ -12,7 +12,7 @@ import { ToggleAsideService } from 'src/app/services/toggleAside/toggle-aside.se
 export class HeaderComponent {
   constructor(
     public API: RequestAPIService,
-    private list: ShoppingserviceService,
+    public list: ShoppingserviceService,
     public ToggleAside: ToggleAsideService
   ){}
 

@@ -11,4 +11,5 @@ export interface Producto {
   category: Category;
   images: string[];
   description: string;
+  quantity: number;
 }

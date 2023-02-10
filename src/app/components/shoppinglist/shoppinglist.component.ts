@@ -9,8 +9,6 @@ import { ShoppingserviceService } from 'src/app/services/shoppingservice/shoppin
 })
 export class ShoppinglistComponent {
   products: Producto[] = []
-  cantidad: number = 0;
-  btndisabled: boolean = true;
 
   constructor(
     public list: ShoppingserviceService
@@ -20,21 +18,5 @@ export class ShoppinglistComponent {
     this.list.myCart$.subscribe(productos => {
       this.products = productos;
     })
-  }
-
-  btnState() {
-    if (this.cantidad <= 0) {
-      this.btndisabled = true;
-    } else{
-      this.btndisabled = false;
-    }
-  }
-  aumentar() {
-    this.cantidad = this.cantidad + 1;
-    this.btnState();
-  }
-  disminuir() {
-    this.cantidad = this.cantidad -1;
-    this.btnState();
   }
 }
