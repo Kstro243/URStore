@@ -30,6 +30,12 @@ export class ShoppingserviceService {
     this.addLocalStorage();
   };
 
+  deleteProduct(id: number) {
+    const index = this.addedproducts.findIndex(productico => productico.id == id);
+    this.addedproducts.splice(index, 1);
+    this.addLocalStorage();
+  }
+
   addLocalStorage() {
     localStorage.setItem('shoppinglist', JSON.stringify(this.addedproducts));
 

@@ -1,6 +1,6 @@
 .header{
   width: 100%;
-  height: 40px;
+  height: 46px;
 
   display: flex;
   align-items: center;
@@ -63,14 +63,14 @@
         top: 0;
         right: 0;
 
-        width: 42%;
+        width: 50%;
         height: 42%;
 
         background-color: var(--btn-light);
 
         border-radius: 50%;
 
-        font-size: 11px;
+        font-size: 13px;
       };
       span{
         cursor: pointer;
