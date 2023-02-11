@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { Producto } from 'src/app/models/product.module';
 import { ShoppingserviceService } from 'src/app/services/shoppingservice/shoppingservice.service';
 
@@ -7,8 +7,9 @@ import { ShoppingserviceService } from 'src/app/services/shoppingservice/shoppin
   templateUrl: './shoppinglist.component.html',
   styleUrls: ['./shoppinglist.component.scss']
 })
-export class ShoppinglistComponent {
-  products: Producto[] = []
+export class ShoppinglistComponent implements DoCheck{
+  products: Producto[] = [];
+  totalPrice: number = 0;
 
   constructor(
     public list: ShoppingserviceService
@@ -25,7 +26,11 @@ export class ShoppinglistComponent {
 
     this.list.myCart$.subscribe(productos => {
       this.products = productos;
-    })
-    // console.log(JSON.parse(localStorage.getItem('shoppinglist')))
+    });
+    this.totalPrice = this.products.reduce((c, producto) => c + producto.quantity * producto.price, 0);
+  }
+
+  ngDoCheck(): void {
+    this.totalPrice =  this.products.reduce((c, producto) => c + producto.quantity * producto.price, 0);
   }
 }

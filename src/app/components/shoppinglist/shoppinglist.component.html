@@ -1,5 +1,5 @@
 <section class="product-list">
-  <h1 *ngIf="!products.length">Agrega productos al carrito</h1>
+  <h1 *ngIf="!products.length">Agrega tu primer producto al carrito de compras!!!</h1>
   <div *ngFor="let product of products">
     <img [src]="product.images[0]" [alt]="product.title">
     <h1>{{product.title}}</h1>
@@ -13,6 +13,7 @@
         <button (click)="list.deleteProduct(product.id)" type="button">Eliminar</button>
       </div>
     </div>
-    <h3>{{product.price * product.quantity}}</h3>
+    <h3>$ {{product.price * product.quantity}}</h3>
   </div>
+  <h2>Total price: ${{totalPrice}}</h2>
 </section>

@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnChanges } from '@angular/core';
+import { Component, DoCheck} from '@angular/core';
 import { categoria } from 'src/app/models/categoria.model';
 import { Producto } from 'src/app/models/product.module';
 import { RequestAPIService } from 'src/app/services/RequestAPI/request-api.service';

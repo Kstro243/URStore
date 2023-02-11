@@ -7,7 +7,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ShoppingserviceService {
-  contador = 0;
 
   constructor() { }
   addedproducts: Producto[]= [];
@@ -16,7 +15,6 @@ export class ShoppingserviceService {
   myCart$ = this.myCart.asObservable();
 
   shoppinglist(producto: Producto) {
-    this.contador ++;
     if (!this.addedproducts.some(productico => productico.id == producto.id)) {
       this.addedproducts.unshift(producto);
       this.addedproducts[0].quantity = 1;
@@ -57,7 +55,6 @@ export class ShoppingserviceService {
   }
 
   aumentar(id: number) {
-    this.contador ++;
     const index = this.addedproducts.findIndex(productico => productico.id == id);
     this.addedproducts[index].quantity += 1;
 
@@ -66,7 +63,6 @@ export class ShoppingserviceService {
   }
 
   disminuir(id: number) {
-    this.contador --;
     const index = this.addedproducts.findIndex(productico => productico.id == id);
     this.addedproducts[index].quantity -= 1;
 

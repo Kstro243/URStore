@@ -6,7 +6,7 @@
 
 .aside{
   background-color: var(--card);
-  width: 30%;
+  width: 28%;
   height: 100vh;
 
   position: fixed;
@@ -31,7 +31,7 @@
       top: 10px;
 
       height: 6%;
-      width: 13%;
+      width: 10%;
       background: white;
 
       @include Center();
@@ -78,7 +78,7 @@
 
         background-color: var(--btn-dark);
 
-        width: 18%;
+        width: 14%;
         height: 100%;
         border-radius: 50%;
 

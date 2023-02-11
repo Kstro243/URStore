@@ -10,7 +10,7 @@ import { RequestAPIService } from 'src/app/services/RequestAPI/request-api.servi
 })
 export class CategoryComponent {
   categoryId: string | null = null;
-  limit = 10;
+  limit = 12;
   offset = 0;
   productos: Producto[] = [];
 

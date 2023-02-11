@@ -9,7 +9,26 @@
   top: 41px;
 
   display: grid;
-  // box-sizing: border-box;
+  > h1 {
+    box-sizing: border-box;
+    width: 80%;
+    height: 150%;
+
+    margin: 50px auto;
+
+    background-color: var(--card);
+
+    @include Center();
+    text-align: justify;
+    padding: 0 80px;
+
+    font-size: 400%;
+
+    z-index: 1;
+
+    border-radius: 40px;
+    border: 1px solid var(--btn-dark);
+  }
   > div{
     width: 80%;
     height: 160px;
@@ -68,6 +87,8 @@
           background-color: var(--fondo);
 
           cursor: pointer;
+
+          font-size: 150%;
         }
         p{
           font-size: var(--lg);
@@ -105,5 +126,13 @@
       font-size: var(--mid);
       font-weight: var(--bold);
     }
+  }
+  h2{
+    font-size: var(--lg);
+    font-weight: var(--bold);
+
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px 150px;
   }
 }

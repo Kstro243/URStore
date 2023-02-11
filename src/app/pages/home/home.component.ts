@@ -9,7 +9,7 @@ import { RequestAPIService } from 'src/app/services/RequestAPI/request-api.servi
 })
 export class HomeComponent {
   productos: Producto[] = []
-  limit: number = 10;
+  limit: number = 12;
   offset: number = 0;
 
   constructor(

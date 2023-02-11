@@ -1,7 +1,7 @@
 <header class="header">
   <div>
-    <span class="material-symbols-outlined">store</span>
     <div>
+      <h4>Categories:</h4>
       <p (click)="ToggleAside.closeAside()" routerLinkActive="active" routerLink="/home">All</p>
       <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 1]">Fashion</p>
       <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 2]">Watches</p>
@@ -9,9 +9,10 @@
       <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 4]">Shoes</p>
       <p (click)="ToggleAside.closeAside()" routerLinkActive="active" [routerLink]="['/category' , 5]">Others</p>
     </div>
+    <img src="./../../../assets/1244019.png" alt="icono">
+    <h1>URStore</h1>
   </div>
   <div>
-    <p>example@gmail.com</p>
     <div>
       <span routerLink="/shoppingcart" class="material-symbols-outlined">shopping_cart</span>
       <div>{{contador}}</div>
